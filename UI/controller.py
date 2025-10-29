@@ -28,4 +28,30 @@ class Controller:
         self._view.update()
 
     # Altre Funzioni Event Handler
-    # TODO
+    def mostra(self, e):
+        lista = self._model.get_automobili()
+        self._view.lista_auto.controls.clear()
+        for auto in lista:
+            self._view.lista_auto.controls.append(ft.Text(str(auto)))
+        self._view.lista_auto.update()
+
+    def cerca(self, e, modello):
+        if not modello:
+            print("Modello non inserito")
+            return
+
+        lista = self._model.cerca_automobili_per_modello(modello)
+
+        if not lista:
+            print("Nessuna automobile trovata")
+            self._view.lista_auto_ricerca.controls.clear()
+            self._view.lista_auto_ricerca.controls.append(ft.Text("Nessun risultato trovato"))
+            self._view.lista_auto_ricerca.update()
+            return
+
+        self._view.lista_auto_ricerca.controls.clear()
+        for auto in lista:
+            self._view.lista_auto_ricerca.controls.append(ft.Text(str(auto)))
+        self._view.lista_auto_ricerca.update()
+
+        #CONTROLLI DA SISTEMARE RELATIVAMENTE ALL'UI
