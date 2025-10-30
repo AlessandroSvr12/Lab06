@@ -35,6 +35,7 @@ class Autonoleggio:
             Funzione che legge tutte le automobili nel database
             :return: una lista con tutte le automobili presenti oppure None
         """
+        #si connette al database,crea cursore fa una query, crea oggetti e li mette in una lista
         automobili=[]
         conn=get_connection()
         cursor = conn.cursor()
@@ -53,6 +54,7 @@ class Autonoleggio:
             :param modello: il modello dell'automobile
             :return: una lista con tutte le automobili di marca e modello indicato oppure None
         """
+        #si connette al database,crea cursore fa una query, crea oggetti e li mette in una lista
         automobili = []
         conn = get_connection()
         cursor = conn.cursor()

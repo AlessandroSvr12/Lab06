@@ -83,6 +83,7 @@ class View:
             ft.Divider(),
 
             # Sezione 3
+            #sezione in cui gestico la lista delle auto nel database
             ft.Row(
                 expand=True,
                 controls=[
@@ -93,6 +94,7 @@ class View:
             ),
             ft.Divider(),
             # Sezione 4
+            #gestisco sezione in cui ricerco e mostro auto trovate
             ft.Column(
                 expand=True,
                 controls=[
